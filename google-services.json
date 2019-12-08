@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "367340646469",
+    "firebase_url": "https://dokaam-a5a79.firebaseio.com",
+    "project_id": "dokaam-a5a79",
+    "storage_bucket": "dokaam-a5a79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367340646469:android:3f4b99a4528ff6854f332c",
+        "android_client_info": {
+          "package_name": "com.sample.ionic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367340646469-kluv85bk02klopm8qj85f7ef6jg4ibfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz5tJhtE87c1qn9n7AuKidjuguJ7LfH6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367340646469-kluv85bk02klopm8qj85f7ef6jg4ibfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

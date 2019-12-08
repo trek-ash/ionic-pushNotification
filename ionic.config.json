@@ -1,5 +1,8 @@
 {
   "name": "notif",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "630066c5"
 }
