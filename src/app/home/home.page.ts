@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FCM } from '@ionic-native/fcm/ngx';
 import { Platform } from '@ionic/angular';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,12 @@ import { Platform } from '@ionic/angular';
 })
 export class HomePage {
   pushes: any = [];
-  constructor(private fcm: FCM, public plt: Platform) {
+  constructor(private fcm: FCM, public plt: Platform, public backend: HomeService) {
     this.plt.ready()
     .then(() => {
       this.fcm.onNotification().subscribe(data => {
         if (data.wasTapped) {
-          console.log(data)
+          console.log(data);
           console.log("Received in background");
           this.pushes.push({
             body: data.body,
@@ -34,12 +35,26 @@ export class HomePage {
 
       this.fcm.onTokenRefresh().subscribe(token => {
         // Register your new token in your back-end if you want
-        // backend.registerToken(token);
+        // this.backend.registerToken(token);
+
       });
-    })
+
+
+
+
+
+      this.subscribeToTopic();
+    });
+
 }
 subscribeToTopic() {
-  this.fcm.subscribeToTopic('enappd');
+  this.fcm.subscribeToTopic('doKaam')
+  .then((data)=>{
+    this.pushes.push({
+      body: data.body,
+      title: data.title
+    });
+  });
 }
 getToken() {
   this.fcm.getToken().then(token => {
@@ -48,6 +63,6 @@ getToken() {
   });
 }
 unsubscribeFromTopic() {
-  this.fcm.unsubscribeFromTopic('enappd');
+  this.fcm.unsubscribeFromTopic('doKaam');
 }
 }
