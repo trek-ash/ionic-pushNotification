@@ -30,9 +30,25 @@ export class HomePage {
             title: data.title
           })
           console.log(this.pushes)
-        };
-      });
 
+        };
+        
+      });
+      this.fcm.getToken().then(token => {
+        const user = {
+            user: "ABS",
+            token: token
+        };
+        console.log("Here");
+        // this.db.collection('users').add(user).then(result => {
+        //     console.log("saved", result);
+        //   }).catch(error => {
+        //     console.log(error);
+        //   });
+        })
+        .catch((err)=>{
+          console.log(err);
+        });
       this.fcm.onTokenRefresh().subscribe(token => {
         // Register your new token in your back-end if you want
         // this.backend.registerToken(token);

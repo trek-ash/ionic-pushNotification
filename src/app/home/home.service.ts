@@ -23,6 +23,9 @@ export class HomeService {
               }).catch(error => {
                 console.log(error);
               });
+            })
+            .catch((err)=>{
+              console.log(err);
             });
     }
 }
